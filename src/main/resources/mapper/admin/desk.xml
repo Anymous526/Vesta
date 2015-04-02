@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lazicats.admin.dal.db.IDeskDao">
+	<resultMap type="desk" id="deskResult">
+		<result property="id" column="id" />
+		<result property="deskNo" column="deskNo" />
+		<result property="deskName" column="deskName"/>
+		<result property="bookMark" column="bookMark"/>
+		<result property="type" column="type" />
+		<result property="description" column="description" />
+	</resultMap>
+	
+		
+	<!-- 根据类型查询桌位信息-->
+	<select id="findDesk" resultMap="deskResult" parameterType="java.lang.Integer" >
+		    select * from desk where type=#{type}
+	</select>
+	
+	<!-- 根据类型分页查询桌位信息-->
+	<select id="pageDesk" resultMap="deskResult" parameterType="page" >
+		 select id,deskNo,deskName,bookMark,type,description from  desk 
+		  <!-- 
+		   <where>
+			<if test='type != null and !"".equals(type)'>
+				and type=#{type}
+			</if>
+		</where>
+		-->
+		    limit #{startPos},#{pageSize};
+	</select>
+	
+	<!-- 根据查询条件查询出总记录数 -->
+	<select id="countRows" parameterType="page" resultType="java.lang.Integer">
+		select count(*) from desk
+		 <!-- 
+		<where>
+			<if test='type != null and !"".equals(type)'>
+				and type=#{type}
+			</if>
+		</where>
+		-->
+	</select>
+	
+	
+	
+	<!-- 根据id查询桌位信息-->
+	<select id="findAllDesk" resultMap="deskResult"  >
+		    select * from desk order by id asc
+	</select>
+	
+	
+	
+	
+	
+	<!-- 根据deskNo修改desk的bookMark,表示预定 -->
+	<update id="update" parameterType="java.lang.Integer" >
+		update desk set bookMark=2 where id=#{id}
+	</update>
+	
+	<!-- 根据deskNo修改desk的bookMark,表示顾客就餐 -->
+	<update id="updateEate" parameterType="java.lang.Integer" >
+		update desk set bookMark=3 where id=#{id}
+	</update>
+	
+	<!-- 根据deskNo修改desk的bookMark,表示就餐完毕 -->
+	<update id="updateRest" parameterType="java.lang.Integer" >
+		update desk set bookMark=1 where id=#{id}
+	</update>
+	
+	<!-- 添加桌位信息 -->
+	<insert id="addDesk" parameterType="desk" useGeneratedKeys="true" keyProperty="id">
+		insert into desk (id,deskNo,deskName,bookMark,type,description)values(#{id},#{deskNo},#{deskName},#{bookMark},#{type},#{description})
+	</insert>
+	<!-- 根据ID查询桌位信息 -->
+	<select id="findDeskById" resultMap="deskResult" parameterType="java.lang.Integer">
+		select * from desk where id=#{id}
+	</select>
+	
+	<!-- 修改桌位信息 -->
+	<update id="updateDesk" parameterType="desk" >
+		update desk 
+		<set>
+		<if test="deskNo != null and deskNo != ''">deskNo=#{deskNo},</if>
+		<if test="deskName != null and deskName != ''">deskName=#{deskName},</if>
+		<if test="type != null and type!= ''">type=#{type},</if>
+		<if test="description != null and description != ''">description=#{description}</if>
+		</set> 
+		 where id=#{id}
+	</update>
+	<!-- 删除桌位信息 -->
+	<delete id="delDesk" parameterType="java.lang.Integer">
+		delete from desk where id=#{id}
+	</delete>
+	
+	
+	
+	
+</mapper>

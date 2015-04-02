@@ -1,0 +1,96 @@
+	
+.tips{
+	background:rgba(255, 255, 255, 0.98)!important;
+	filter:Alpha(opacity=98);
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+	width:550px;
+	padding-left:20px;
+	height:330px;
+	line-height:36px;
+	font-size:14px;
+	border-radius:2px;
+	position:absolute;
+	z-index: 9999;
+	left:47%;
+	top:38%;
+	margin:-12px 0 0 -125px;
+	}
+.table1{
+	border-radius:2px;
+	height: 300px;
+	width:540px;
+	position: relative;
+	top:5px;
+	left: -10px;
+	overflow: auto;
+}
+.goodslist{
+	position: relative;
+	top: 10px;
+	width: 98%;
+}
+
+.cancel{
+	position: relative;
+	left: 400px;
+	font-size: 1em;
+}
+
+.table_1{
+	border-radius:2px;
+	height: 290px;
+	width:540px;
+	position: relative;
+	top:5px;
+	left: -10px;
+	overflow: auto;
+}
+
+
+.cancel_1{
+	position: relative;
+	left: 400px;
+	font-size: 1em;
+}
+
+
+
+.table_2{
+	border-radius:2px;
+	height: 280px;
+	width:540px;
+	position: relative;
+	top:5px;
+	left: -10px;
+	overflow: auto;
+}
+
+
+.cancel_2{
+	position: relative;
+	top:5px;
+	left: 400px;
+	font-size: 1em;
+}
+
+
+
+
+.table_3{
+	border-radius:2px;
+	height: 280px;
+	width:540px;
+	position: relative;
+	top:5px;
+	left: -10px;
+	overflow: auto;
+}
+
+
+.cancel_3{
+	position: relative;
+	top:5px;
+	left: 400px;
+	font-size: 1em;
+}
+

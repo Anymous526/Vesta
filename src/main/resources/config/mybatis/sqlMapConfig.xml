@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="lazyLoadingEnabled" value="true" />
+		<setting name="multipleResultSetsEnabled" value="true" />
+		<setting name="useColumnLabel" value="true" />
+		<setting name="defaultExecutorType" value="REUSE" />
+		<setting name="defaultStatementTimeout" value="25000" />
+	</settings>
+		<typeAliases>
+			<!-- goods -->
+		<typeAlias alias="goods" type="org.lazicats.website.entity.Goods"/>
+		<!-- myorder -->
+		<typeAlias alias="myorder" type="org.lazicats.website.entity.MyOrder" />
+		
+		<!-- employee -->
+		<typeAlias alias="employee" type="org.lazicats.admin.entity.Employee"/>
+		<!-- desk -->
+		<typeAlias alias="desk" type="org.lazicats.admin.entity.Desk"/>
+		<!-- orderTable -->
+		<typeAlias alias="orderTable" type="org.lazicats.admin.entity.OrderTable"/>
+		
+		<!-- page -->
+		<typeAlias alias="page" type="org.lazicats.common.vo.Page"/>
+		
+		<!-- pageDesk -->
+		<typeAlias alias="pageDesk" type="org.lazicats.admin.vo.DeskPage"/>
+		
+		<!-- pageGoods -->
+		<typeAlias alias="goodsPage"  type="org.lazicats.website.vo.GoodsPage"/>
+		
+	</typeAliases>
+	
+		<mappers>
+		<!-- goods -->
+		<mapper resource="mapper/order/goods.xml" />
+		<!-- myorder -->
+		<mapper resource="mapper/order/myorder.xml"/>
+		
+		<!-- employee -->
+		<mapper resource="mapper/admin/employee.xml"/>
+		<!-- desk -->
+		<mapper resource="mapper/admin/desk.xml"/>
+		<!-- orderTable -->
+		<mapper resource="mapper/admin/orderTable.xml"/>
+	</mappers>
+</configuration>

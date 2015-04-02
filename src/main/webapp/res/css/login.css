@@ -1,0 +1,94 @@
+	table{
+		border: 20px solid  #CC9933;
+		border-radius: 5%;
+		background:#996600;
+		text-align: center;
+		width: 50%;
+		position: relative;
+		top: 140px;
+		color: white;
+	}
+	
+	table tr td{
+		height: 60px;
+		margin: 10px;
+	}
+	input{
+		height: 30px;
+		width: 100%;
+	}
+	#in{
+		text-align: right;
+	}
+	.top{
+		position: absolute;
+		width: 100%;
+		height: 70%;
+	}
+	.word{
+		position: relative;
+		top: -230px;
+		left: 1050px;
+		width: 6%;
+	}
+	#admin{
+		width: 30%;
+		font-size: 1.5em;
+		position: relative;
+		left: 10px;
+		color: yellow;
+	}
+	#admin img{
+		height: 40px;
+		width: 40px;
+		position: relative;
+		bottom: -10px;
+	}
+	.login{
+		height: 500px;
+		width: 100%;
+		text-align: right;
+	}
+	#log{
+		position: relative;
+		left: 200px;
+	}
+	
+	.footer{
+		position: absolute;
+		top: 73%;
+		height: 20%;
+		width: 100%;
+		text-align: center;
+		color: white;
+	}
+	.button{
+		background:#CC9933;
+		position:absolute;
+		top: 92%;
+		width: 100%;
+		height: 8%;
+	}
+	.w{
+		position: relative;
+		top: 10px;
+		width: 5.8%;
+		left: 1050px;		
+	}
+	.w1{
+		position: relative;
+		top: -82px;
+		left: 1200px;
+		width: 5.8%;
+	}
+	
+	#error{
+		height: 20px;
+		width: 200px;
+		background: #C00000;
+	}
+	#submit{
+		background: url(../img/login.png) no-repeat;
+		border: 1px solid  #996600;
+	}
+	

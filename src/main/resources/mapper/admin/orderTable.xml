@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lazicats.admin.dal.db.IOrderTableDao">
+	<resultMap id="orderTableResult" type="orderTable" >
+		<result property="id" column="id" />
+		<result property="orderId" column="orderId"/>
+		<result property="deskNo" column="deskNo" />
+		<result property="tel" column="tel"/>
+		<result property="waiterId" column="waiterId"/>
+		<result property="clientNo" column="clientNo"/>
+		<result property="payment" column="payment"/>
+		<result property="phone" column="phone"/>
+		<result property="vip" column="vip"/>
+		<result property="orderBook" column="orderBook"/>
+		
+		<result property="checkOut" column="checkOut" />
+		<result property="remark" column="remark" />
+		<result property="createTime" column="createTime"/>
+	</resultMap>
+	
+		
+	<!-- 插入开台信息-->
+	<insert id="addorder" parameterType="orderTable" useGeneratedKeys="true" keyProperty="id">
+		insert into ordertable(id,orderId,deskNo,tel,waiterId,clientNo,payment,phone,vip,orderBook,checkOut,remark,createTime)values(#{id},#{orderId},#{deskNo},#{tel},#{waiterId},#{clientNo},#{payment},#{phone},#{vip},#{orderBook},#{checkOut},#{remark},#{createTime})
+	</insert>
+	
+		<!--查询所有开台记录  -->
+	<select id="findAll" resultMap="orderTableResult" >
+		select * from ordertable
+	</select>
+	
+	
+	
+	<!-- 查询所有开台信息
+	<select id="">
+		select * from ordertable o join myorder m on(o.orderId=m.id) where m.goodsIds is not null
+	</select>
+	
+	 
+	
+	<resultMap id="orderTableResult1" type="orderTable" >
+		<result property="id" column="id" />
+		<result property="orderId" column="orderId"/>
+			<association property="myorder" javaType="myorder">
+				
+			</association>
+		<result property="deskNo" column="deskNo" />
+		<result property="tel" column="tel"/>
+		<result property="waiterId" column="waiterId"/>
+		<result property="clientNo" column="clientNo"/>
+		<result property="payment" column="payment"/>
+		<result property="vip" column="vip"/>
+		<result property="checkOut" column="checkOut" />
+		<result property="remark" column="remark" />
+		<result property="createTime" column="createTime"/>	
+	</resultMap>
+	
+	-->
+	
+	
+	
+	
+	
+	<!-- 根据orderId查询开台信息 -->
+	<select id="findByOrderId" resultMap="orderTableResult" parameterType="java.lang.String">
+		    select * from ordertable where orderId=#{orderId}
+	</select>
+	<!-- 查询同一桌订单个数 -->
+	<select id="queryBydeskMerge" resultMap="orderTableResult" parameterType="java.lang.String">
+		    select * from ordertable where orderId=#{orderId}
+	</select>
+	
+	<!-- 根据deskNo查询所有订单号 -->
+	<select id="findByDeskId" resultMap="orderTableResult" parameterType="java.lang.Integer">
+		select * from ordertable where deskNo=#{deskNo}
+	</select>
+	<!-- 根据phone,orderBook查询手机订单 -->
+	<select id="findByphone" resultMap="orderTableResult" parameterType="java.lang.Integer">
+		select * from ordertable where phone=1 and orderBook=0
+	</select>
+	<select id="findBydesknophone" resultMap="orderTableResult" parameterType="java.lang.Integer">
+		select * from ordertable where phone=1 and checkOut=0 and deskNo=#{deskNo}
+	</select>
+	
+	<!-- 订单结账后更改开台结账状态 -->
+	<update id="updateCheckOut" parameterType="java.lang.String">
+		update ordertable set checkOut=1 where orderId=#{orderId}
+	</update>
+	
+	<!-- 打印后更改下单状态 -->
+	<update id="updateOrderBook" parameterType="java.lang.String">
+		update ordertable set orderBook=1 where orderId=#{orderId}
+	</update>
+	 
+	
+	
+	
+	<!-- 根据订单id删除对应的开台信息 -->
+	<delete id="deleteOrderTable" parameterType="java.lang.String">
+		delete  from ordertable where orderId=#{orderId}
+	</delete>
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lazicats.admin.dal.db.IEmployeeDao">
+	<resultMap type="employee" id="employeeResult">
+		<result property="waiterId" column="waiterId" />
+		<result property="waiterName" column="waiterName" />
+		<result property="waiterPassword" column="waiterPassword" />
+	</resultMap>
+	
+		
+	<!-- 员工登录-->
+	<select id="login" resultMap="employeeResult" parameterType="java.lang.String"  >
+		    select * from employee where waiterName=#{username}
+	</select>
+	<!--查询所有员工  -->
+	<select id="findAll" resultMap="employeeResult">
+		select * from employee
+	</select>
+</mapper>

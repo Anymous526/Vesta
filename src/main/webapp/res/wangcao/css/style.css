@@ -1,0 +1,33 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: url(/res/wangcao/img/bg03.jpg);
+	font-family: "微软雅黑" ;
+	font-size: 18;
+}
+.frist{
+	margin: 0 auto;
+	height: 435px;
+	background: url(/res/wangcao/img/14.jpg);
+}
+.secend{
+	margin: 0 auto;
+	height: 230px;
+	background: url(/res/wangcao/img/15.jpg);
+}
+.secend_table{
+	left: 20%;
+	border: 0px solid #38c;
+}
+.content{
+	padding: 10px 10px 10px 10px;
+	padding-top: 100px;
+	padding-left: 200px;
+	text-align: center;
+}
+.houtai{
+	float: right;
+}
+.login_img{
+	width: 30px;height: 30px;
+}

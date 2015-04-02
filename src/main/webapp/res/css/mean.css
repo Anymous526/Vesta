@@ -1,0 +1,223 @@
+	.top{
+		background: #CC9933;
+		width: 100%;
+		height: 10%;
+	}
+	.return{
+		height: 65px;
+		width: 6%;
+	}
+	.return a img{
+		position: relative;
+		left: 30px;
+		height: 65px;
+	}
+	.form1{
+		position: relative;
+		top: -63px;
+		height:55px;
+		width:250px;
+		left:150px ;
+	}
+	.search{
+		border: 5px solid  #F5F5F5;
+		border-radius: 30px;
+		background: #FFFFFF;
+		height: 45px;
+		width:250px ;
+		position: relative;
+		top: 2px;
+	}
+	#find{
+		position: relative;
+		width: 50px;
+		height: 50px;
+	}
+	.fi{
+		border: 1px solid #FFFFFF;
+		height: 30px;
+		position: relative;
+		top: -25px;
+		left: 0px;
+	}
+	.mean{
+		height: 65px;
+		width: 766px;
+		position: relative;
+		top:-130px;
+		left: 600px;
+	}
+	.mean ul{
+		width:700px;
+	}
+	.mean ul li{
+		height:50px;
+		width: 175px;
+		float: left;
+		list-style: none;
+		font-size: 2.5em;
+		text-decoration: none;
+	}
+	.down{
+		height: 90%;
+	}
+	.left{
+		width: 25%;
+		height: 100%;
+	}
+	.login{
+		position: relative;
+		top:0px;
+		height: 20%;
+	}
+	.logimg{
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top:0px
+	}
+	
+	.order{
+		border: 1px solid  #CC9933;
+		border-radius: 10px;
+		background: #CC9933;
+		position: relative;
+		top: 0px;
+		height: 78%;
+		width: 95%;
+		left: 6px;
+	}
+	.order_lab{
+		border: 1px solid  #CC9933;
+		border-radius: 5px;
+		background: #996600;
+		height: 11%;
+		text-align: center;
+		font-size: 2em;
+		color: white;
+	}
+	.order_table1{
+		position: absolute;
+		height:73%;
+		overflow: auto;
+	}
+	.desk{
+		color: white;
+		height: 5%;
+	}
+	.order_table{
+		border: 1px solid  #CC9933;
+		border-radius: 1px;
+		position: relative;
+		top: 0px;
+		width: 100%;
+		color: white;
+	}
+	.order_table_td_1{
+		width: 210px;
+	}
+	.order_table_td_2{
+		width: 80px;
+	}
+	.order_table_td_3{
+		width: 80px;
+	}
+	.order_table_td_4{
+		width: 100px;
+	}
+	.order_table_total{
+		text-align: right;
+	}
+.menu_box{height: 30px;}
+.menu_delete{float: right;}
+.menu_delete a{width: 32px;height: 32px;display:block;background: url(../img/icon.png) 0 -96px;float: right;}
+.menu_btn{float: right;width:79px;height: 32px;}
+.menu_btn .l_btn{width:38px;height:30px;border:1px solid #e4e4e4;float:left;display: block;background: url(../img/icon.png) no-repeat -29px -65px #f8f8f8;border-radius: 2px 0 0 2px;}
+.menu_btn .r_btn{width:38px;height:30px;border-right:1px solid #e4e4e4;border-bottom:1px solid #e4e4e4;border-top:1px solid #e4e4e4;float:right;display: block;background: url(../img/icon.png) no-repeat -60px -65px #f8f8f8;border-radius: 0 2px 2px 0;}
+.suborder{
+	border: 1px solid  #CC9933;
+	border-radius: 5px;
+	background: #996600;
+	width: 100%;
+	height: 11%;
+	position: relative;
+	top: 333.8px;
+	font-size: 2em;
+	color: white;
+}
+	.middle{
+		border: 1px solid  #CC9933;
+		border-radius: 10px;
+		height:100% ;
+		width: 60%;
+		position: absolute;
+		top: 70px;
+		left:25.7% ;
+	}
+	.list{
+		border: 1px solid  #CC9933;
+		border-radius: 10px;
+		height: 80%;
+		overflow: auto;
+		background: #CC9933;
+	}
+	.p{
+		border: 1px solid  #CC9933;
+		border-radius: 5px;
+		text-align: center;
+		font-size: 2em;
+		background:#CC9933 ;
+		height: 7%;
+		position: relative;
+		top: 0px;
+	}
+	.goodslist{
+		border: 5px solid  #996600;
+		border-radius: 10px;
+		position: relative;
+		top:auto;
+		width: 100%;
+		height: 100%;
+		color: white;
+	}
+	.goodslist tr td{
+		border: 1px solid #996600;
+	}
+	.goodslist tr td img{
+		width: 70%;
+	}
+	
+	.right{
+		border: 10px solid  #CC9933;
+		border-radius: 10px;
+		position: absolute;
+		top:70px;
+		margin-left:1150px ;
+		width: 11.5%;
+		height: 85%;
+		left: 2.3%;
+	}
+	.sale{
+		position: absolute;
+		top: 0px;
+		border: 10px solid  #CC9933;
+		border-radius: 2px;
+		background: #CC9933;
+		width: 90%;
+		height: 96.5%;
+		font-size: 1.3em;
+		text-align: center;
+	}
+	.sale ul{
+		height:95%;
+	}
+	.sale ul li{
+		list-style: none;
+		border: 5px solid  #CC9900;
+		border-radius: 10px;
+		height: 60px;
+		width: 100%;
+		background: #996600;
+		position: relative;
+		left: -25px;
+	}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lazicats.website.dal.db.IMyOrderDao">
+	<resultMap type="myorder" id="myorderResult">
+		<result property="id" column="id" />
+		<result property="orderId" column="orderId" />
+		<result property="goodsIds" column="goodsIds" />
+		<result property="goodsNames" column="goodsNames" />
+		<result property="goodsQtys" column="goodsQtys" />
+		<result property="goodsNum" column="goodsNum" />
+		<result property="price" column="price" />
+		<result property="totalPrice" column="totalPrice" />
+		<result property="createDate" column="createDate" />
+		<result property="goodsTastes" column="goodsTastes" />
+	</resultMap>
+	
+	<!-- 生成我的订单 -->
+	<insert id="addMyOrder"  parameterType="myorder" useGeneratedKeys="true" keyProperty="id">
+		insert into myorder(id,orderId,goodsIds,goodsNames,goodsQtys,goodsNum,price,totalPrice,createDate,goodsTastes)
+		values(#{id},#{orderId},#{goodsIds},#{goodsNames},#{goodsQtys},#{goodsNum},#{price},#{totalPrice},#{createDate},#{goodsTastes})
+	</insert>
+	
+	
+		
+	<!-- 条件查询或得某一商品的数量  订单id号 商品 -->
+	<select id="findById" resultMap="myorderResult" parameterType="java.lang.String">
+		    select * from myorder where id=#{id}
+	</select>
+	
+	<!-- 后台开台后修改订单信息 -->
+	<update id="updateMyOrder" parameterType="myorder">
+		update myorder 
+		<set>
+		<if test="orderId != null and orderId != ''"> orderId=#{orderId},</if>
+		<if test="goodsIds != null"> goodsIds=#{goodsIds},</if>
+		<if test="goodsNames != null">goodsNames=#{goodsNames},</if>
+		<if test="goodsQtys != null">goodsQtys=#{goodsQtys},</if>
+		<if test="goodsNum != null">goodsNum=#{goodsNum},</if>
+		<if test="price != null ">price=#{price},</if>
+		<if test="goodsTastes != null ">goodsTastes=#{goodsTastes},</if>
+		<if test="totalPrice!= null">totalPrice=#{totalPrice}</if>
+		</set>
+		 where id=#{id}
+	</update>
+	
+	<!-- 查询所有订单信息 -->
+	<select id="findAll" resultMap="myorderResult">
+		select * from myorder
+	</select>
+	
+	<!--根据ID号删除我的订单信息  -->
+	<delete id="deleteMyOrder" parameterType="java.lang.String">
+		delete  from myorder where id=#{id}
+	</delete>
+	
+	<!-- 根据查询条件查询出总记录数 -->
+	<select id="countRows" parameterType="page" resultType="java.lang.Integer">
+		select count(*) from myorder
+	</select>
+	
+	<!-- 根据类型分页查询桌位信息-->
+	<select id="pageMyOrder" resultMap="myorderResult" parameterType="page" >
+		 select id,orderId,goodsIds,goodsNames,goodsQtys,goodsNum,price,totalPrice,createDate from  myorder   limit #{startPos},#{pageSize};
+	</select>
+	
+	
+</mapper>

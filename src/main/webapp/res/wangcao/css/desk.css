@@ -1,0 +1,141 @@
+body {
+	margin: 0px auto;
+	padding: 0;
+}
+.header {
+	border: 0px solid #AAAAAA;
+}
+.header .header_img {
+	background:url(../img/16.jpg);
+	width: 100%;
+	height: 130px;
+}
+.header .header_conent {
+	background: #000000;
+	width: 100%;
+	height: 40px;
+}
+.content {
+	margin: 0 auto;
+	padding: 0 auto;
+	border: 2px solid #AAAAAA;
+	width: 100%;
+	height: 500px;
+	background: url(../img/color_wihte.png);
+}
+#table1 {
+	width: 100%;
+	height: 500px;
+}
+#table1 #tableone {
+	width: 20%;
+	height: 500px;
+}
+#table1 #tablesecend {
+	width: 80%;
+	height: 500px;
+}
+.table2 tr th {
+	background: #E78F08;
+}
+.content_left {
+	margin: 0 ;
+	padding: 0 ;
+	width: 100%;
+	height: 500px;
+	background: url(../img/desk_left.png);
+}
+/* .left1{
+	margin: 0 ;
+	padding: 0 ;
+	width: 100%;
+	height: 500px;
+	background: url(/wuxian/res/wangcao/img/desk_left.png);
+} */ 
+.left1_img {
+	margin: 0 10px 0 0;
+	width: 100%;
+	height: 490px;
+	background: url(/wuxian/res/wangcao/img/kaitai_img.jpg);
+} 
+.order_left1_img {
+	margin: 0 10px 0 0;
+	width: 100%;
+	height: 200px;
+	background: url(/wuxian/res/wangcao/img/order_img.jpg);
+}
+.money_left1_img {
+	margin: 0 10px 0 0;
+	width: 100%;
+	height: 200px;
+	background: url(/wuxian/res/wangcao/img/money.jpg);
+}
+
+.left2{
+	margin: 0 ;
+	padding: 0 ;
+	width: 100%;
+	height: 250px;
+	background: url(${BasePath}/res/wangcao/img/desk_left.png);
+}
+.content_right {
+	margin: 0 ;
+	padding: 0 ;
+	width: 100%;
+	height: 500px;
+}
+.footer {
+	clear: none;
+	margin: 0;
+	width: 100%;
+	height: 40px;
+	background: url(../img/15.jpg);
+}
+.ui-menu {
+	height: 500px;
+}
+.ui-helper-hidden {
+	display: none;
+}
+table #tablesorter {
+	font-family: arial;
+	background-color: #CDCDCD;
+	margin: 10px 0pt 15px;
+	font-size: 8pt;
+	width: 100%;
+	text-align: left;
+}
+table#tablesorter thead tr td,
+table#tablesorter tfoot tr td {
+	height: 135px;
+	background-color: #e6EEEE;
+	border: 1px solid #FFF;
+	font-size: 8pt;
+	padding: 4px;
+}
+table#tablesorter thead tr .header {
+	background-image: url(bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter tbody td {
+	color: #3D3D3D;
+	padding: 4px;
+	background-color: #FFF;
+	vertical-align: top;
+}
+table.tablesorter tbody tr.odd td {
+	background-color: #F0F0F6;
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(desc.gif);
+}
+table.tablesorter thead tr .headerSortDown,
+table.tablesorter thead tr .headerSortUp {
+	background-color: #8dbdd8;
+}
+
