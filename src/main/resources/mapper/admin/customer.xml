@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lazicats.admin.dal.db.ICustomerDao">
+	<resultMap type="customer" id="customerResult">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="sex" column="sex"/>
+		<result property="age" column="age"/>
+		<result property="tel" column="tel" />
+		<result property="address" column="address" />
+		<result property="createTime" column="createTime" />
+	</resultMap>
+	
+	<!-- 后台查询所有顾客信息 -->
+	<select id="findAll" resultMap="customerResult">
+		select * from customer
+	</select>
+	
+	
+	<!-- 查询出顾客总记录数 -->
+	<select id="countRows" parameterType="page" resultType="java.lang.Integer">
+		select count(*) from customer
+	</select>
+	
+	<!-- 分页查询顾客信息-->
+	<select id="pageCustomer" resultMap="customerResult" parameterType="page" >
+		 select id,name,sex,age,tel,address,createTime from  customer limit #{startPos},#{pageSize};
+	</select>
+	
+	<!-- 添加顾客信息 -->
+	<insert id="addCustomer" parameterType="customer" useGeneratedKeys="true" keyProperty="id">
+		insert into customer (id,name,sex,age,tel,address,createTime)values(#{id},#{name},#{sex},#{age},#{tel},#{address},#{createTime})
+	</insert>
+	
+	<!-- 根据ID查询顾客信息 -->
+	<select id="findCustomerById" resultMap="customerResult" parameterType="java.lang.Integer">
+		select * from customer where id=#{id}
+	</select>
+	
+	<!-- 修改顾客信息 -->
+	<update id="updateCustomer" parameterType="customer" >
+		update customer 
+		<set>
+		<if test="name != null and name != ''">name=#{name},</if>
+		<if test="sex != null and sex!= ''">sex=#{sex},</if>
+		<if test="age != null and age!= ''">age=#{age},</if>
+		<if test="tel != null and tel!= ''">tel=#{tel},</if>
+		<if test="address != null and address != ''">address=#{address}</if>
+		</set> 
+		 where id=#{id}
+	</update>
+	
+	<!-- 通过id删除顾客信息 -->
+	<delete id="delCustomerById" parameterType="java.lang.Integer">
+		delete from customer where id=#{id}
+	</delete>
+	
+	
+	
+	
+</mapper>
