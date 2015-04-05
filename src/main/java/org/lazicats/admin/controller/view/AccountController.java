@@ -118,6 +118,7 @@ public class AccountController {
 	/***
 	 * 根据订单号查询结账所需要的信息
 	 * @throws Exception 
+	 * 
 	 */
 	@SuppressWarnings("unused")
 	@RequestMapping(value="account")
@@ -310,9 +311,9 @@ public class AccountController {
 		account.setMyOrder(myOrder);
 		account.setOrderTable(orderTable);
 		// 先填充数据，然后生成图片，调用打印机直接打印图片
-		Print createImage=new Print();
-		String fileLocation=createImage.graphicsGeneration(goodsVoList, account);
-		String fileimage= createImage.createImage(fileLocation);
+		Print print=new Print();
+		String fileLocation=print.graphicsGeneration(goodsVoList, account);
+		String fileimage= print.createImage(fileLocation);
 		PrintUtil pu=new PrintUtil();
 		pu.printNoWindow(fileimage);
 		toAccount(request, response, model);

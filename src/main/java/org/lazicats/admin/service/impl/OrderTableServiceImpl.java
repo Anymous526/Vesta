@@ -1,14 +1,12 @@
 package org.lazicats.admin.service.impl;
 
 import java.util.List;
-
 import org.lazicats.admin.dal.db.IOrderTableDao;
 import org.lazicats.admin.entity.OrderTable;
 import org.lazicats.admin.service.IOderTableService;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.huaxia.commons.logutil.LogProxy;
 @Service("orderTableService")
 public class OrderTableServiceImpl implements IOderTableService {
