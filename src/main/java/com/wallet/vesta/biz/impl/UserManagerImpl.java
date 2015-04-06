@@ -1,18 +1,17 @@
-imimport org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.wallet.vesta.biz.DuplicatedUserException;
 import com.wallet.vesta.biz.UserManager;
 import com.wallet.vesta.dal.UserDao;
 import com.wallet.vesta.domain.User;
+
 /**
  * 有关用户的操作。
  *
  * @author Kevin Sun
  */
 public class UserManagerImpl implements UserManager {
-	
+
 	@Autowired
 	private UserDao userDao;
 
