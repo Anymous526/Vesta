@@ -53,12 +53,6 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	</bean>
 	
-	<!-- customer顾客信息 -->
-	<bean id="customerDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="org.lazicats.admin.dal.db.ICustomerDao"></property>
-		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
-	</bean>
-	
 	<!-- desk -->
 	<bean id="deskDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface" value="org.lazicats.admin.dal.db.IDeskDao"></property>

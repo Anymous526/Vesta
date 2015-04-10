@@ -2,31 +2,33 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.lazicats</groupId>
-	<artifactId>Vesta</artifactId>
+	<artifactId>wuxian</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>enterprise's website</name>
-	
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>4.1.0.RELEASE</spring.version>
-		<shiro.version>1.2.3</shiro.version>
-		<spring.mock.version>2.0.8</spring.mock.version>
-		<gson.version>2.3</gson.version>
-		<tair.version>2.3.4</tair.version>
-		<junit.version>4.11</junit.version>
-		<solrj.version>4.9.0</solrj.version>
-		<slf4j.version>1.7.7</slf4j.version>
-		<log4j.version>1.2.17</log4j.version>
-		<druid.version>0.2.25</druid.version>
-		<groovy.version>2.2.1</groovy.version>
-		<mybatis.version>3.2.7</mybatis.version>
-		<freemarker.version>2.3.20</freemarker.version>
-		<mybatis.spring.version>1.2.2</mybatis.spring.version>
-		<mysql.connector.version>5.1.29</mysql.connector.version>
-		<bean.validation.version>5.0.2.Final</bean.validation.version>
-		<!-- <nexus.url>http://172.17.1.48:8181</nexus.url> -->
-	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 	<dependencies>
 		<dependency>
@@ -126,6 +128,7 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+
 		<!-- Freemarker -->
 		<dependency>
 			<groupId>org.freemarker</groupId>
@@ -134,6 +137,7 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
@@ -141,6 +145,7 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -176,6 +181,7 @@
 			<version>3.0-alpha-1</version>
 			<scope>provided</scope>
 		</dependency>
+		
 		<!-- fileupload io -->
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -187,41 +193,36 @@
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.2.2</version>
 		</dependency>
+		
+		
 		<!-- Commons Lang -->
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version>
 		</dependency>
-		<dependency>
-			<groupId>net.sf.json-lib</groupId>
-			<artifactId>json-lib</artifactId>
-			<version>2.4</version>
-			<classifier>jdk15</classifier>
-		</dependency>
+		
+		
 	</dependencies>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>2.3.2</version>
-					<configuration>
-						<source>1.7</source>
-						<target>1.7</target>
-						<encoding>UTF-8</encoding>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
-	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>4.1.0.RELEASE</spring.version>
+		<shiro.version>1.2.3</shiro.version>
+		<spring.mock.version>2.0.8</spring.mock.version>
+		<gson.version>2.3</gson.version>
+		<tair.version>2.3.4</tair.version>
+		<junit.version>4.11</junit.version>
+		<solrj.version>4.9.0</solrj.version>
+		<slf4j.version>1.7.7</slf4j.version>
+		<log4j.version>1.2.17</log4j.version>
+		<druid.version>0.2.25</druid.version>
+		<groovy.version>2.2.1</groovy.version>
+		<mybatis.version>3.2.7</mybatis.version>
+		<freemarker.version>2.3.20</freemarker.version>
+		<mybatis.spring.version>1.2.2</mybatis.spring.version>
+		<mysql.connector.version>5.1.29</mysql.connector.version>
+		<bean.validation.version>5.0.2.Final</bean.validation.version>
+		<!-- <nexus.url>http://172.17.1.48:8181</nexus.url> -->
+	</properties>
 </project>

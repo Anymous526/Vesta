@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.lazicats.admin.dal.db.IEmployeeDao;
 import org.lazicats.admin.entity.Employee;
-import org.lazicats.common.vo.Page;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -110,42 +109,6 @@ public class EmployeeDaoImpl implements IEmployeeDao{
 	public List<Employee> findAll() throws Exception {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public Integer countRows(Page page) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Employee> pageEmployee(Page page) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void addEmployee(Employee employee) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Employee findEmployeeById(Integer waiterId) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void updateEmployee(Employee employee) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delEmployeeById(Integer waiterId) throws Exception {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

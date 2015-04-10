@@ -116,23 +116,25 @@
 								<div id="left1">
 									<button id="left1_but" style="width: 100%;">后台管理系统</button>
 									<ul id="menu_1">
-										<li><a href="${BasePath}/admin/tomaintain" id="desk">桌位管理</a>
+										<li><a href="${BasePath}/admin/tomaintain" id="desk">开台管理</a>
 										</li>
 										<li><a href="#" id="goods">菜系管理</a>
 										</li>
-										<li><a href="${BasePath}/admin/tocustomer" id="customer">客户管理</a>
+										<li><a href="#" id="goods">客户管理</a>
 										</li>
-										<li><a href="${BasePath}/admin/toOrder" id="order">订单管理</a>
+										<li><a href="#" id="goods">订单管理</a>
 										</li>
-										<li><a href="${BasePath}/admin/accountList" id="account">结账管理</a>
+										<li><a href="#" id="goods">结账管理</a>
 										</li>
-										<li><a href="${BasePath}/admin/toemployee" id="employee">人事管理</a>
+										<li><a href="#" id="goods">人事管理</a>
+										</li>
+										<li><a href="#" id="goods">分班管理</a>
 										</li>
 										<!--<li><a href="#" id="goods">采购管理</a>
 										</li>
 										<li><a href="#" id="goods">库存管理</a>
 										</li> -->
-										<li><a href="${BasePath}/admin/selList" id="sel">销售额管理(日、月、年)</a>
+										<li><a href="#" id="goods">销售额管理(日、月、年)</a>
 										</li>
 									</ul>
 								</div>

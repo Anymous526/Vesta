@@ -121,7 +121,7 @@ public class Print {
 		} catch (Exception e) {
 		}
 		if (bimg != null)
-			graphics.drawImage(bimg, 230, 0, null);
+			graphics.drawImage(bimg, 100, 0, null);
 		graphics.dispose();
 		String imageUrl = createImage("D://print//account//image//"
 				+ account.getMyOrder().getId() + ".jpg");
@@ -141,7 +141,7 @@ public class Print {
 		public static String orderPic(List<GoodsVo> goodsVoList,Account account) {
 			createDir("D://print//order//image");
 			int imageWidth = 400;// 图片的宽度
-			int imageHeight = 300 + goodsVoList.size() * 100;// 图片的高度
+			int imageHeight = 400 + goodsVoList.size() * 100;// 图片的高度
 			image = new BufferedImage(imageWidth, imageHeight,
 					BufferedImage.TYPE_INT_RGB);
 			Graphics graphics = image.getGraphics();
@@ -191,7 +191,7 @@ public class Print {
 			} catch (Exception e) {
 			}
 			if (bimg != null)
-				graphics.drawImage(bimg, 230, 0, null);
+				graphics.drawImage(bimg, 100, 0, null);
 			graphics.dispose();
 			String imageUrl = createImage("D://print//order//image//"
 					+ account.getMyOrder().getId() + ".jpg");

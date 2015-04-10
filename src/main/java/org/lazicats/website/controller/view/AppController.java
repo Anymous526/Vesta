@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import org.lazicats.admin.entity.Assemble;
 import org.lazicats.admin.entity.OrderTable;
 import org.lazicats.admin.service.IDeskService;
 import org.lazicats.admin.service.IOderTableService;
@@ -78,6 +79,119 @@ public class AppController {
 		model.put("drinksList", drinksList);
 		model.put("goodsList", goodsList);
 		return "wap/index";
+
+	}
+	/**
+	 * 员工登录index_employee
+	 * 
+	 * @param request
+	 * @param model
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping("/work")
+	public String employee(HttpServletRequest request, ModelMap model)
+			throws Exception {
+		List<Goods> goods = goodsService.findList();
+		List<Goods> drinks = new ArrayList<Goods>();//酒水
+		List<Goods> goodsList = new ArrayList<Goods>();//肉类
+		List<Goods> greens=new ArrayList<Goods>();//蔬菜
+		List<Goods> sucaiList = new ArrayList<Goods>();//其他
+		for (Goods gd : goods) {
+			if (gd.getType() == 5) {
+				drinks.add(gd);//酒水
+			} else if(gd.getType()==1) {
+				goodsList.add(gd);//鱼类
+			}else if(gd.getType()==2){
+				goodsList.add(gd);//肉类
+			}else if (gd.getType()==3){
+				greens.add(gd);//蔬菜
+			}else{
+				sucaiList.add(gd);
+			}
+			
+		}
+		/**
+		 * 新增员工代点菜--肉类
+		 */
+		List<Assemble> assemblelist=new ArrayList<Assemble>();
+		Assemble assemble;
+		int y=0;
+		for (int i = 0; i < goodsList.size(); i++) {
+			assemble=new Assemble();
+			assemble.setName(goodsList.get(y).getName());
+			assemble.setPrice(goodsList.get(y).getPrice());
+			if(y<goodsList.size()-1){
+				++y;
+				assemble.setNameone(goodsList.get(y).getName());
+				assemble.setPriceone(goodsList.get(y).getPrice());
+				++y;
+			}else{
+				continue;
+			}
+			assemblelist.add(assemble);
+			System.out.println(assemble.getNameone());
+		}
+		
+		/**
+		 * 新增员工代点菜---蔬菜类
+		 */
+		List<Assemble> greensList=new ArrayList<Assemble>();
+		Assemble assemble1; 
+		int s=0;
+		for (int i = 0; i < greens.size(); i++) {
+			assemble1=new Assemble();
+			assemble1.setName(greens.get(s).getName());
+			assemble1.setPrice(greens.get(s).getPrice());
+			if(s<greens.size()-1){
+				++s;
+				assemble1.setNameone(greens.get(s).getName());
+				assemble1.setPriceone(greens.get(s).getPrice());
+				++s;
+			}else{
+				continue;
+			}
+			greensList.add(assemble1);
+		}
+		
+		/**
+		 * 新增员工代点菜---酒水类
+		 */
+		List<Assemble> drinksList=new ArrayList<Assemble>();
+		Assemble assemble2; 
+		int d=0;
+		for (int i = 0; i < drinks.size(); i++) {
+			assemble2=new Assemble();
+			assemble2.setName(drinks.get(d).getName());
+			assemble2.setPrice(drinks.get(d).getPrice());
+			if(d<drinks.size()-1){
+				++d;
+				assemble2.setNameone(drinks.get(d).getName());
+				assemble2.setPriceone(drinks.get(d).getPrice());
+				++d;
+			}else{
+				continue;
+			}
+			drinksList.add(assemble2);
+		}
+		
+		
+		
+		
+		model.put("assemblelist", assemblelist);//肉类
+		model.put("assemblelistlength", assemblelist.size());
+		model.put("goodsList", goodsList);//肉类-->订单
+		model.put("goodsListlength", goodsList.size());//肉类-->订单
+		
+		model.put("greensList", greensList);//蔬菜
+		model.put("greenslistlength", greensList.size());
+		
+		model.put("drinksList", drinksList);//酒水
+		model.put("drinksListlengthsize", drinksList.size());
+		
+		model.put("sucaiListlength", sucaiList.size());//其他
+		model.put("sucaiList", sucaiList);
+		return "wap/work";
 
 	}
 

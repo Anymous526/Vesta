@@ -240,7 +240,8 @@ public class OrderListController {
 		String fileLocation = createImage.orderPic(goodsVoList, account);
 		String fileimage = createImage.createImage(fileLocation);
 		PrintUtil pu = new PrintUtil();
-		pu.printNoWindow(fileimage);
+		//pu.printNoWindow(fileimage);
+		pu.printImage(fileimage);
 
 		// 打印后更改下单状态
 		orderTableService.updateOrderBook(id);

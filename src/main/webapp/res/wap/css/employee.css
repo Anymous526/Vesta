@@ -1,0 +1,21 @@
+.tableconext1{
+	width: 100%; 
+}
+#workwuxianmoveBar {
+				position: absolute;
+				width: 40px;
+				height: 45px;
+				right: 0;
+				top: 30%;
+			}
+#workwuxianbanner {
+				background-image: url(../img/caidan.png);
+				cursor: move;
+				position: absolute;
+				text-align: center;
+				padding-top: 14px;
+				width: 40px;
+				height: 35px;
+
+				
+			}

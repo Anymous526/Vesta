@@ -4,14 +4,7 @@
 	<resultMap type="employee" id="employeeResult">
 		<result property="waiterId" column="waiterId" />
 		<result property="waiterName" column="waiterName" />
-		<result property="sex" column="sex" />
-		<result property="age" column="age" />
-		<result property="tel" column="tel" />
-		<result property="deptNo" column="deptNo" />
-		<result property="auth" column="auth" />
 		<result property="waiterPassword" column="waiterPassword" />
-		<result property="address" column="address" />
-		<result property="createTime" column="createTime" />
 	</resultMap>
 	
 		
@@ -23,49 +16,4 @@
 	<select id="findAll" resultMap="employeeResult">
 		select * from employee
 	</select>
-	
-	
-	<!-- 查询出员工总记录数 -->
-	<select id="countRows" parameterType="page" resultType="java.lang.Integer">
-		select count(*) from employee
-	</select>
-	
-	<!-- 分页查询员工信息-->
-	<select id="pageEmployee" resultMap="employeeResult" parameterType="page" >
-		 select waiterId,waiterName,sex,age,tel,address,deptNo,auth,waiterPassword,createTime from  employee limit #{startPos},#{pageSize};
-	</select>
-	
-	<!-- 添加员工信息 -->
-	<insert id="addEmployee" parameterType="employee" useGeneratedKeys="true" keyProperty="id">
-		insert into employee (waiterId,waiterName,sex,age,tel,address,deptNo,auth,waiterPassword,createTime)values(#{waiterId},#{waiterName},#{sex},#{age},#{tel},#{address},#{deptNo},#{auth},#{waiterPassword},#{createTime})
-	</insert>
-	
-	<!-- 根据ID查询员工信息 -->
-	<select id="findEmployeeById" resultMap="employeeResult" parameterType="java.lang.Integer">
-		select * from employee where waiterId=#{waiterId}
-	</select>
-	
-	<!-- 修改员工信息 -->
-	<update id="updateEmployee" parameterType="employee" >
-		update employee 
-		<set>
-		<if test="waiterName != null and waiterName != ''">waiterName=#{waiterName},</if>
-		<if test="sex != null and sex!= ''">sex=#{sex},</if>
-		<if test="age != null and age!= ''">age=#{age},</if>
-		<if test="tel != null and tel!= ''">tel=#{tel},</if>	
-		<if test="deptNo != null and deptNo!= ''">deptNo=#{deptNo},</if>
-		<if test="auth != null and auth!= ''">auth=#{auth},</if>
-		<if test="waiterPassword != null and waiterPassword!= ''">waiterPassword=#{waiterPassword},</if>
-		<if test="address != null and address != ''">address=#{address}</if>
-		</set> 
-		 where waiterId=#{waiterId}
-	</update>
-	
-	<!-- 通过id删除员工信息 -->
-	<delete id="delEmployeeById" parameterType="java.lang.Integer">
-		delete from employee where waiterId=#{waiterId}
-	</delete>
-	
-	
-	
 </mapper>

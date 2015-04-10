@@ -94,7 +94,7 @@ public class PrintUtil {
 		// String printStr = "打印测试内容";// 获取需要打印的目标文本
 		if (textStream != null) // 当打印内容不为空时
 		{ // 指定打印输出格式
-			DocFlavor flavor = DocFlavor.INPUT_STREAM.POSTSCRIPT;// SERVICE_FORMATTED.PRINTABLE
+			DocFlavor flavor = DocFlavor.INPUT_STREAM.JPEG;// SERVICE_FORMATTED.PRINTABLE
 			// 定位默认的打印服务
 			PrintService printService = PrintServiceLookup
 					.lookupDefaultPrintService();
@@ -111,7 +111,7 @@ public class PrintUtil {
 			// 设置打印属性
 			PrintRequestAttributeSet pras = new HashPrintRequestAttributeSet();
 			// 设置纸张大小,也可以新建MediaSize类来自定义大小
-			pras.add(MediaSizeName.ISO_A4);
+			pras.add(MediaSizeName.ISO_C6);
 			DocAttributeSet das = new HashDocAttributeSet();
 			// 指定打印内容
 			Doc doc = new SimpleDoc(textStream, flavor, das);
@@ -163,7 +163,7 @@ public class PrintUtil {
 			}
 			;
 			DocPrintJob job = printService.createPrintJob(); // 设置打印属性
-			pras.add(MediaSizeName.ISO_A4);
+			pras.add(MediaSizeName.ISO_C6);
 			DocAttributeSet das = new HashDocAttributeSet(); // 指定打印内容
 			Doc doc = new SimpleDoc(textStream, flavor, das); // 不显示打印对话框，直接进行打印工作
 			try {
