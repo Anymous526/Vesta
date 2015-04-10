@@ -181,7 +181,7 @@
 			<version>3.0-alpha-1</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- fileupload io -->
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -193,16 +193,28 @@
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.2.2</version>
 		</dependency>
-		
-		
+
+
 		<!-- Commons Lang -->
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version>
 		</dependency>
-		
-		
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+
+
 	</dependencies>
 
 	<properties>
