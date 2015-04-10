@@ -13,6 +13,7 @@ public class ImgCompress {
 	private Image img;
 	private int width;
 	private int height;
+	
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws Exception {
 		System.out.println("开始：" + new Date().toLocaleString());
