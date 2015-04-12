@@ -2,8 +2,8 @@ package com.wallet.vesta.biz.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.wallet.vesta.biz.DuplicatedUserException;
 import com.wallet.vesta.biz.UserManager;
+import com.wallet.vesta.core.exception.DuplicatedUserException;
 import com.wallet.vesta.dal.UserDao;
 import com.wallet.vesta.domain.User;
 

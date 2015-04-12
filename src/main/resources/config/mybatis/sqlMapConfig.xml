@@ -10,7 +10,6 @@
 		<setting name="defaultStatementTimeout" value="25000" />
 	</settings>
 		<typeAliases>
-		<typeAlias alias="assemble" type="org.lazicats.admin.entity.Assemble"/>
 			<!-- goods -->
 		<typeAlias alias="goods" type="org.lazicats.website.entity.Goods"/>
 		<!-- myorder -->
@@ -18,6 +17,10 @@
 		
 		<!-- employee -->
 		<typeAlias alias="employee" type="org.lazicats.admin.entity.Employee"/>
+		
+			<!-- customer顾客信息 -->
+		<typeAlias alias="customer" type="org.lazicats.admin.entity.Customer"/>
+		
 		<!-- desk -->
 		<typeAlias alias="desk" type="org.lazicats.admin.entity.Desk"/>
 		<!-- orderTable -->
@@ -42,9 +45,18 @@
 		
 		<!-- employee -->
 		<mapper resource="mapper/admin/employee.xml"/>
+		
+		
+		<!-- customer顾客信息 -->
+		<mapper resource="mapper/admin/customer.xml"/>
+		
+		
 		<!-- desk -->
 		<mapper resource="mapper/admin/desk.xml"/>
 		<!-- orderTable -->
 		<mapper resource="mapper/admin/orderTable.xml"/>
+		
+		
+		
 	</mappers>
 </configuration>

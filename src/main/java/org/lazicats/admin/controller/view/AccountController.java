@@ -259,8 +259,7 @@ public class AccountController {
 				String fileLocation=createImage.graphicsGeneration(goodsVoList, account);
 				String fileimage= createImage.createImage(fileLocation);
 				PrintUtil pu=new PrintUtil();
-				//pu.printNoWindow(fileimage);
-				pu.printImage(fileimage);
+				pu.printNoWindow(fileimage);
 
 		toAccount(request, response, model);
 		return "admin/account";
@@ -316,8 +315,7 @@ public class AccountController {
 		String fileLocation=print.graphicsGeneration(goodsVoList, account);
 		String fileimage= print.createImage(fileLocation);
 		PrintUtil pu=new PrintUtil();
-		//pu.printNoWindow(fileimage);
-		pu.printImage(fileimage);
+		pu.printNoWindow(fileimage);
 		toAccount(request, response, model);
 		return "admin/account";
 	}

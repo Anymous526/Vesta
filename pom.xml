@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.lazicats</groupId>
-	<artifactId>wuxian</artifactId>
+	<artifactId>Vesta</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>enterprise's website</name>
@@ -237,4 +237,5 @@
 		<bean.validation.version>5.0.2.Final</bean.validation.version>
 		<!-- <nexus.url>http://172.17.1.48:8181</nexus.url> -->
 	</properties>
+	
 </project>

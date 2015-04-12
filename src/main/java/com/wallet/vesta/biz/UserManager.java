@@ -1,5 +1,6 @@
 package com.wallet.vesta.biz;
 
+import com.wallet.vesta.core.exception.DuplicatedUserException;
 import com.wallet.vesta.domain.User;
 
 /**
